@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#111827"><title>Walmart Hourly PTO Calculator</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="top"><div class="wrap"><div class="eyebrow">INDEPENDENT ASSOCIATE TOOL</div><h1>Hourly PTO <span>&amp; PPTO</span> Calculator</h1><p>Estimate accrual from hours worked, service time, and the applicable earning plan.</p></div></header>
+<main class="wrap">
+<section class="notice"><strong>Important:</strong> This calculator uses the Walmart Field Hourly PTO Earning Chart effective July 1, 2024. It is an estimate, not a Walmart system or benefit determination. Confirm your current plan and balances in GTA / OneWalmart.</section>
+<div class="layout">
+<section class="panel">
+<h2>Your work details</h2>
+<div class="field"><label for="plan">Earning plan / location</label><select id="plan">
+<option value="continuous">Continuous Protected PTO — New York (outside NYC/Westchester exclusions? See note)</option>
+<option value="national">National Protected PTO — locations not listed in another plan</option>
+<option value="standard">Standard Protected PTO — listed states / cities</option>
+<option value="illinois">Standard Protected PTO with Kin Care — Illinois (outside Chicago)</option>
+<option value="chicago">Chicago, Illinois — Kin Care</option>
+<option value="ca_nv">Continuous Protected PTO with Kin Care — California / Nevada</option>
+</select><small>New York is listed in the chart's Continuous Protected PTO Plan.</small></div>
+<div class="field"><label for="status">Employment status</label><select id="status"><option value="full">Full-time</option><option value="part">Part-time</option><option value="temp">Temporary</option></select></div>
+<div class="field"><label for="years">Completed years of service</label><input id="years" type="number" min="0" max="60" step="1" value="5"></div>
+<div class="field"><label for="hours">Average hours worked per week</label><input id="hours" type="number" min="0" max="100" step=".5" value="40"></div>
+<div class="field"><label for="weeks">Projection period (weeks)</label><input id="weeks" type="number" min="0" max="52" step="1" value="12"></div>
+</section>
+<section class="panel">
+<h2>Current plan-year activity</h2>
+<p class="muted">Enter values from GTA if you want the estimate to account for how much of each annual earning limit you have already used up through accrual.</p>
+<div class="field"><label for="ptoBalance">Current PTO balance (hours)</label><input id="ptoBalance" type="number" min="0" step=".01" value="0"></div>
+<div class="field"><label for="pptoBalance">Current PPTO balance (hours)</label><input id="pptoBalance" type="number" min="0" step=".01" value="0"></div>
+<div class="field"><label for="ptoYtd">PTO earned this plan year (hours)</label><input id="ptoYtd" type="number" min="0" step=".01" value="0"></div>
+<div class="field"><label for="pptoYtd">PPTO earned this plan year (hours)</label><input id="pptoYtd" type="number" min="0" step=".01" value="0"></div>
+<div class="field"><label for="usedPto">PTO planned to use during projection (hours)</label><input id="usedPto" type="number" min="0" step=".01" value="0"></div>
+<div class="field"><label for="usedPpto">PPTO planned to use during projection (hours)</label><input id="usedPpto" type="number" min="0" step=".01" value="0"></div>
+</section>
+</div>
+<section class="panel results">
+<div class="result-head"><div><div class="eyebrow">ESTIMATED ACCRUAL</div><h2>Your projection</h2></div><button id="reset" class="secondary">Reset</button></div>
+<div class="cards">
+<div class="metric"><span>Projected PTO earned</span><strong id="ptoEarned">0.00 h</strong></div>
+<div class="metric"><span>Projected PPTO earned</span><strong id="pptoEarned">0.00 h</strong></div>
+<div class="metric total"><span>Projected combined balance</span><strong id="combined">0.00 h</strong></div>
+</div>
+<div class="details" id="details" aria-live="polite"></div>
+<p class="muted" id="rateSummary"></p>
+</section>
+<section class="panel">
+<h2>How the estimate works</h2>
+<ul><li>Accrual is calculated from projected service hours (average weekly hours × weeks).</li><li>Where the chart has annual caps, the calculator subtracts the plan-year earnings you entered.</li><li>After the PPTO annual earning maximum is reached, the PPTO portion of the earning rate is redirected to PTO, subject to the PTO maximum, as described in the chart.</li><li>Continuous plans show no annual maximum where the chart says “No max.”</li><li>The projection holds your current service-year rate constant. If you cross a service anniversary during the projection, actual accrual may differ.</li></ul>
+<p class="source">Source: <a href="https://one.walmart.com/content/dam/themepage/pdfs/PTO-Plans_Hourly-WM-Sams_Earning-Chart.pdf" target="_blank" rel="noopener">Walmart — Paid Time Off Plans and Earning Rates (Field Walmart, Sam’s, and Supply Chain Hourly Associates; effective 7/1/2024)</a>.</p>
+</section>
+<footer>Independent, unofficial calculator. Not affiliated with or endorsed by Walmart Inc. Rates and eligibility may change; local law, associate classification, and company policy control.</footer>
+</main><script src="app.js"></script></body></html>
