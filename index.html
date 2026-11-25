@@ -13,13 +13,13 @@
 <section class="panel">
 <h2>Your work details</h2>
 <div class="field"><label for="plan">Earning plan / location</label><select id="plan">
-<option value="continuous">Continuous Protected PTO — New York (outside NYC/Westchester exclusions? See note)</option>
+<option value="continuous">Continuous Protected PTO — New York (including NYC and Westchester)</option>
 <option value="national">National Protected PTO — locations not listed in another plan</option>
 <option value="standard">Standard Protected PTO — listed states / cities</option>
 <option value="illinois">Standard Protected PTO with Kin Care — Illinois (outside Chicago)</option>
 <option value="chicago">Chicago, Illinois — Kin Care</option>
 <option value="ca_nv">Continuous Protected PTO with Kin Care — California / Nevada</option>
-</select><small>New York is listed in the chart's Continuous Protected PTO Plan.</small></div>
+</select><small>New York, including New York City and Westchester County, is listed in the chart's Continuous Protected PTO Plan.</small></div>
 <div class="field"><label for="status">Employment status</label><select id="status"><option value="full">Full-time</option><option value="part">Part-time</option><option value="temp">Temporary</option></select></div>
 <div class="field"><label for="years">Completed years of service</label><input id="years" type="number" min="0" max="60" step="1" value="5"></div>
 <div class="field"><label for="hours">Average hours worked per week</label><input id="hours" type="number" min="0" max="100" step=".5" value="40"></div>
@@ -43,8 +43,7 @@
 <div class="metric"><span>Projected PPTO earned</span><strong id="pptoEarned">0.00 h</strong></div>
 <div class="metric total"><span>Projected combined balance</span><strong id="combined">0.00 h</strong></div>
 </div>
-<div class="details" id="details" aria-live="polite"></div>
-<p class="muted" id="rateSummary"></p>
+<div class="details" id="details" aria-live="polite"></div><p class="muted" id="rateSummary"></p>
 </section>
 <section class="panel">
 <h2>How the estimate works</h2>
